@@ -29,43 +29,35 @@
                     <input type='text' class='form-control' name='thumbnail' id='thumbail' />
                 </div>
 
-                <button id='send' class='btn btn-success mt-4'>Enviar</button>
+                <button id='addProduct' class='btn btn-success mt-4'>Enviar</button>
 
             </div>
 
             <div id="productos"></div>
-            <div id="chat"></div>
 
+
+            <div class='container bg-light p-4 my-2 mx-auto'>
+                <h1 class='text-primary mb-5'>Centro de mensajes</h1>
+                <input placeholder="Ingresa tu dirección de email..." type='email' class='form-control' id='nameMessage'
+                    style="max-width:300px;" />
+                <hr />
+
+
+                <div id="chat"></div>
+
+
+                <div class="d-flex justify-content-start">
+                    <input placeholder="Envía un mensaje..." type='text' class='form-control' id='message'
+                        style="max-width:200px;" />
+                    <button id='sendMessage' class='btn btn-success ms-3'>Enviar!</button>
+                </div>
+                <p class="fst-italic text-danger mt-2" id="alert"></p>
+
+            </div>
 
         </div>
-        <!-- <div class="container">
-        <h1>Mi App chat</h1>
-        <hr>
 
-
-        <div id="messages"></div>
-
-
-        <form onsubmit="return addMessage(this)" class='form row' style="width:fit-content;">
-
-            <div class="col-sm  pb-2">
-                <input type="text" class="form-control" id="username" placeholder="Tu Nombre">
-            </div>
-            <div class="col-sm pb-2">
-                <input type="text" id="texto" class="form-control" placeholder="Cuéntanos algo...">
-            </div>
-            <div class="col-sm  pb-2">
-                <input class='btn btn-primary' type="submit" value="Enviar!">
-            </div>
-
-        </form>
-
-
-
-    </div>
-
-    </div> -->
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="main.js"></script>

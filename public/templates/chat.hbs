@@ -1,17 +1,11 @@
-<div class='container bg-light p-4 my-2 mx-auto'>
-  <h1 class='text-primary mb-5'>Centro de mensajes</h1>
-  <input type='text' class='form-control' id='nameMessage' />
-  <hr />
-  <div>
-    {{#each listItems}}
+<div>
+  {{#each listItems}}
 
-      <p>{{this.name}}: {{this.message}}</p>
+    <p>
+      <span class='fw-bold text-primary'>{{this.name}}</span>
+      <span style='color:brown;'>{{this.date}}</span>
+      :
+      <span class='fst-italic text-success'>{{this.message}}</span></p>
 
-    {{/each}}
-  </div>
-  <div class='d-flex'>
-    <input type='text' class='form-control' id='message' />
-    <button id='sendMessage' class='btn btn-success mt-4'>Enviar!</button>
-  </div>
-
+  {{/each}}
 </div>

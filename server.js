@@ -20,9 +20,9 @@ const productos = [
 ];
 
 const mensajes = [
-  { name: 'Carlos', message: 'Hola!' },
-  { name: 'Juan', message: 'Bien! Vos?' },
-  { name: 'Carlos', message: 'Todo bien por suerte!' },
+  { name: 'carlos@hotmail.com', message: 'Hola!', date: '[03/08/2022 18:08:76]' },
+  { name: 'juan@gmail.com', message: 'Bien! Vos?', date: '[03/08/2022 18:08:76]' },
+  { name: 'carlos@hotmail.com', message: 'Todo bien por suerte!', date: '[03/08/2022 18:08:76]' },
 ];
 
 httpServer.listen(PORT, function () {
@@ -31,6 +31,7 @@ httpServer.listen(PORT, function () {
 
 io.on('connection', (socket) => {
   console.log('Un cliente se ha conectado');
+
   socket.emit('productos', productos);
   socket.emit('mensajes', mensajes);
 
@@ -41,6 +42,10 @@ io.on('connection', (socket) => {
     productos.push(productoAGuardar);
 
     io.sockets.emit('productos', productos);
+  });
+  socket.on('new-message', (newMessage) => {
+    mensajes.push(newMessage);
+    io.sockets.emit('mensajes', mensajes);
   });
 });
 
